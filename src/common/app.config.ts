@@ -8,14 +8,14 @@
  */
 export const Brand = {
   Title: {
-    Base: 'big-AGI',
-    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'big-AGI',
+    Base: "agentK's-Playground😈",
+    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + "agentK's-Playground😈",
   },
   Meta: {
     Description: 'Launch big-AGI to unlock the full potential of AI, with precise control over your data and models. Voice interface, AI personas, advanced features, and fun UX.',
-    SiteName: 'big-AGI | Precision AI for You',
+    SiteName: "agentK's-Playground😈 | Profound Agent for K",
     ThemeColor: '#32383E',
-    TwitterSite: '@enricoros',
+    TwitterSite: 'null',
   },
   URIs: {
     Home: 'https://big-agi.com',
