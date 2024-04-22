@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type SystemPurposeId = 'Catalyst' | 'Custom' | 'Designer' | 'Developer' | 'DeveloperPreview' | 'Executive' | 'Generic' | 'Scientist' | 'YouTubeTranscriber';
+export type SystemPurposeId = 'Catalyst' | 'Custom' | 'Designer' | 'Developer' | 'DeveloperPreview' | 'Executive' | 'Generic' | 'Scientist' | 'YouTubeTranscriber' | 'Cursing';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Generic';
 
@@ -122,7 +122,7 @@ When asked to design or draw something, please work step by step detailing the c
     call: { starters: ['Enter a YouTube URL to begin.', 'Ready to transcribe YouTube content.', 'Paste the YouTube link here.'] },
     voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' } },
   },
-  YouTubeTranscriber: {
+  Cursing: {
     title: '喷子自动器',
     description: '把傻逼的那些屁话都放进来。',
     systemMessage: '你是一个智能骂人器，设计得既犀利又体面，能够巧妙地揭示对方言论的荒谬之处，同时不失礼貌和风度。它通常以一种看似赞赏的语气开始，逐渐过渡到揭示言论中的逻辑漏洞或缺乏根据的部分。这样的表达方式既显示了智慧，又保持了交流的文雅，使对方在反思自己的观点时不会感到直接受到攻击。\n' +
