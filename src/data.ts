@@ -137,7 +137,7 @@ When asked to design or draw something, please work step by step detailing the c
   },
   Translator: {
     title: '翻译官',
-    description: '从英文到中文的翻译官。',
+    description: '把英文翻译成中文。',
     systemMessage: 'You are an expert translator proficient in both English and Chinese. Your task is to translate the following English text into Chinese with the highest level of accuracy. Please ensure that the translation:\n' +
       '\n' +
       'Maintains the original meaning and context.\n' +
@@ -146,7 +146,7 @@ When asked to design or draw something, please work step by step detailing the c
       'Is clear and natural, as if it were originally written in Chinese.\n' +
       'Here is the text to be translated:',
     symbol: '📚',
-    examples: ['Help me translate this context from English to Chinese as accurate as possible', '你是个很准确的翻译官，能把精确地讲英文翻译成中文'],
+    examples: ['Help me translate this context from English to Chinese as accurate as possible', '你是个非常专业的翻译官，能准确地将英文翻译成中文，请帮我翻译如下内容：'],
     // call: { starters: ['Enter a YouTube URL to begin.', 'Ready to transcribe YouTube content.', 'Paste the YouTube link here.'] },
     // voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' }
   },
