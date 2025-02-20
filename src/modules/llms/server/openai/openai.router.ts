@@ -407,11 +407,14 @@ export function openAIAccess(access: OpenAIAccessSchema, modelRefId: string | nu
 
 
     case 'deepseek':
-      // https://platform.deepseek.com/api-docs/
+      // Silicon Flow API endpoint
       const deepseekKey = access.oaiKey || env.DEEPSEEK_API_KEY || '';
-      const deepseekHost = fixupHost(access.oaiHost || DEFAULT_DEEPSEEK_HOST, apiPath);
-      if (!deepseekKey || !deepseekHost)
-        throw new Error('Missing Deepseek API Key or Host. Add it on the UI (Models Setup) or server side (your deployment).');
+      // const deepseekHost = fixupHost(access.oaiHost || DEFAULT_DEEPSEEK_HOST, apiPath);
+      // if (!deepseekKey || !deepseekHost)
+      //   throw new Error('Missing Deepseek API Key or Host. Add it on the UI (Models Setup) or server side (your deployment).');
+      const deepseekHost = 'https://api.siliconflow.cn';
+      if (!deepseekKey)
+        throw new Error('Missing Deepseek API Key. Add it on the UI (Models Setup) or server side (your deployment).');
 
       return {
         headers: {
