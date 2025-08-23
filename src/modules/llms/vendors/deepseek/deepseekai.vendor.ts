@@ -27,7 +27,7 @@ export const ModelVendorDeepseek: IModelVendor<DDeepseekServiceSettings, OpenAIA
     dialect: 'deepseek',
     oaiKey: partialSetup?.deepseekKey || '',
     oaiOrg: '',
-    oaiHost: '',
+    oaiHost: 'https://api.siliconflow.cn',
     heliKey: '',
     moderationCheck: false,
   }),
