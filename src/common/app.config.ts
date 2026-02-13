@@ -8,13 +8,13 @@
  */
 export const Brand = {
   Title: {
-    Base: 'Scientist-Miemie🐑🔬',
-    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'Scientist-Miemie🐑🔬',
+    Base: "agentK's-Playground😈",
+    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + "agentK's-Playground😈",
   },
   Meta: {
     Description:
       'Launch big-AGI to unlock the full potential of AI, with precise control over your data and models. Voice interface, AI personas, advanced features, and fun UX.',
-    SiteName: 'Scientist-Miemie🐑🔬 | Precision AI for MieMie',
+    SiteName: "agentK's-Playground😈 | Profound Agent for K",
     ThemeColor: '#32383E',
     TwitterSite: '@enricoros',
   },

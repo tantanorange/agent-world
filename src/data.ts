@@ -1,6 +1,16 @@
 import * as React from 'react';
 
-export type SystemPurposeId = 'Catalyst' | 'Custom' | 'Designer' | 'Developer' | 'DeveloperPreview' | 'Executive' | 'Generic' | 'Scientist' | 'YouTubeTranscriber';
+export type SystemPurposeId =
+  | 'Catalyst'
+  | 'Custom'
+  | 'Designer'
+  | 'Developer'
+  | 'DeveloperPreview'
+  | 'Executive'
+  | 'Generic'
+  | 'Scientist'
+  | 'YouTubeTranscriber'
+  | 'Translator';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Generic';
 
@@ -146,5 +156,24 @@ When asked to design or draw something, please work step by step detailing the c
     symbol: '⚡',
     call: { starters: ["What's the task?", 'What can I do?', 'Ready for your task.', 'Yes?'] },
     voices: { elevenLabs: { voiceId: 'flq6f7yk4E4fJM5XTYuZ' } },
+  },
+  Translator: {
+    title: '翻译官',
+    description: '把英文翻译成中文。或把中文翻译成英文。',
+    systemMessage:
+      'You are an expert translator proficient in both English and Chinese. Your task is to translate the following English text into Chinese, or Chinese text into English, with the highest level of accuracy. Please ensure that the translation:\n' +
+      '\n' +
+      'Maintains the original meaning and context.\n' +
+      'Uses appropriate vocabulary and grammar for the target audience.\n' +
+      'Preserves any idiomatic expressions, cultural references, and tone from the original text.\n' +
+      'Is clear and natural, as if it were originally written in Chinese or English.\n' +
+      'Here is the text to be translated:',
+    symbol: '📚',
+    examples: [
+      'Help me translate this context from English to Chinese as accurate as possible',
+      '你是个非常专业的翻译官，能准确地将中文翻译成英文，请帮我翻译如下内容：',
+    ],
+    // call: { starters: ['Enter a YouTube URL to begin.', 'Ready to transcribe YouTube content.', 'Paste the YouTube link here.'] },
+    // voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' }
   },
 };
