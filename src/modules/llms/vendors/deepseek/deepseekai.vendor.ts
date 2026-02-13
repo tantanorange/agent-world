@@ -25,23 +25,22 @@ export const ModelVendorDeepseek: IModelVendor<DDeepseekServiceSettings, OpenAIA
   // functions
   initializeSetup: () => ({
     deepseekKey: '',
-    deepseekHost: '',
+    deepseekHost: 'https://api.siliconflow.cn',
   }),
   validateSetup: (setup) => {
     return setup.deepseekKey?.length >= 35;
   },
   getTransportAccess: (partialSetup) => ({
     dialect: 'deepseek',
-    clientSideFetch: _csfDeepseekAvailable(partialSetup) && !!partialSetup?.csf,
     oaiKey: partialSetup?.deepseekKey || '',
     oaiOrg: '',
-    oaiHost: partialSetup?.deepseekHost || '',
+    oaiHost: 'https://api.siliconflow.cn',
     heliKey: '',
+    moderationCheck: false,
   }),
 
   // OpenAI transport ('Deepseek' dialect in 'access')
   rpcUpdateModelsOrThrow: ModelVendorOpenAI.rpcUpdateModelsOrThrow,
-
 };
 
 function _csfDeepseekAvailable(s?: Partial<DDeepseekServiceSettings>) {

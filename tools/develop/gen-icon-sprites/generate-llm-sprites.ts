@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/.env node
 /**
  * Generates VendorIconSprite.tsx from individual vendor icon files + a template.
  *

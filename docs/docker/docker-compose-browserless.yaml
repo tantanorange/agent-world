@@ -16,7 +16,7 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - ..env
     environment:
       - PUPPETEER_WSS_ENDPOINT=ws://browserless:3000
     depends_on:

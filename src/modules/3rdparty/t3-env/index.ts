@@ -22,7 +22,7 @@ type Options<
   (
     | {
     /**
-     * Manual destruction of `process.env`. Required for Next.js < 13.4.4.
+     * Manual destruction of `process..env`. Required for Next.js < 13.4.4.
      */
     runtimeEnv: StrictOptions<
       ClientPrefix,
@@ -36,8 +36,8 @@ type Options<
     | {
     runtimeEnv?: never;
     /**
-     * Can be used for Next.js ^13.4.4 since they stopped static analysis of server side `process.env`.
-     * Only client side `process.env` is statically analyzed and needs to be manually destructured.
+     * Can be used for Next.js ^13.4.4 since they stopped static analysis of server side `process..env`.
+     * Only client side `process..env` is statically analyzed and needs to be manually destructured.
      */
     experimental__runtimeEnv: Record<
       | {

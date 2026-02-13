@@ -28,13 +28,13 @@ We provide an empty `env-secret.yaml` file as a template.
 You can fill in the necessary information using a text editor.
 
 ```bash
-$ nano env-secret.yaml
+$ nano .env-secret.yaml
 ```
 
 ### Step 4: Deploying Kubernetes Resources
 
 ```bash
-$ kubectl apply -f big-agi-deployment.yaml -f env-secret.yaml
+$ kubectl apply -f big-agi-deployment.yaml -f .env-secret.yaml
 ```
 
 ### Step 5: Verifying the Resource Statuses

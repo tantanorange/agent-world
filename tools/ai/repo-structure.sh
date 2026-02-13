@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/.env bash
 # Generate repository structure for AI assistant memory
 # Wraps output in <context name="directoryStructure"> tags.
 # Hides dotfiles by default, use -a/--all to show them.

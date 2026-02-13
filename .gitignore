@@ -33,7 +33,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
+# local .env files
 .env
 .env.*
 
@@ -47,7 +47,7 @@ next-env.d.ts
 # other
 .idea/
 
-# Ingore k8s/env-secret.yaml
+# Ingore k8s/.env-secret.yaml
 ./k8s/env-secret.yaml
 /certificates
 .env*.local

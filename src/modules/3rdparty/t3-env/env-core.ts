@@ -70,10 +70,10 @@ export interface BaseOptions<
    * the Zod validator.
    *
    * This means that if you have an empty string for a value that is supposed
-   * to be a number (e.g. `PORT=` in a ".env" file), Zod will incorrectly flag
+   * to be a number (e.g. `PORT=` in a "..env" file), Zod will incorrectly flag
    * it as a type mismatch violation. Additionally, if you have an empty string
    * for a value that is supposed to be a string with a default value (e.g.
-   * `DOMAIN=` in an ".env" file), the default value will never be applied.
+   * `DOMAIN=` in an "..env" file), the default value will never be applied.
    *
    * In order to solve these issues, we recommend that all new projects
    * explicitly specify this option as true.
@@ -89,7 +89,7 @@ export interface LooseOptions<
 
   /**
    * What object holds the environment variables at runtime. This is usually
-   * `process.env` or `import.meta.env`.
+   * `process..env` or `import.meta..env`.
    */
   // Unlike `runtimeEnvStrict`, this doesn't enforce that all environment variables are set.
   runtimeEnv: Record<string, string | boolean | number | undefined>;
@@ -103,7 +103,7 @@ export interface StrictOptions<
   TExtends extends Array<Record<string, unknown>>,
 > extends BaseOptions<TShared, TExtends> {
   /**
-   * Runtime Environment variables to use for validation - `process.env`, `import.meta.env` or similar.
+   * Runtime Environment variables to use for validation - `process..env`, `import.meta..env` or similar.
    * Enforces all environment variables to be set. Required in for example Next.js Edge and Client runtimes.
    */
   runtimeEnvStrict: Record<
@@ -141,7 +141,7 @@ export interface ClientOptions<
 
   /**
    * Specify your client-side environment variables schema here. This way you can ensure the app isn't
-   * built with invalid env vars.
+   * built with invalid .env vars.
    */
   client: Partial<{
     [TKey in keyof TClient]: TKey extends `${TPrefix}${string}`
@@ -158,7 +158,7 @@ export interface ServerOptions<
 > {
   /**
    * Specify your server-side environment variables schema here. This way you can ensure the app isn't
-   * built with invalid env vars.
+   * built with invalid .env vars.
    */
   server: Partial<{
     [TKey in keyof TServer]: TPrefix extends undefined

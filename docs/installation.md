@@ -113,14 +113,14 @@ Deploy big-AGI on a Kubernetes cluster for enhanced scalability and management. 
 
 2. Configure the environment variables:
    ```bash
-   cp docs/k8s/env-secret.yaml env-secret.yaml
-   vim env-secret.yaml  # Edit the file to set your environment variables
+   cp docs/k8s/.env-secret.yaml .env-secret.yaml
+   vim .env-secret.yaml  # Edit the file to set your environment variables
    ```
 
 3. Apply the Kubernetes configurations:
    ```bash
    kubectl create namespace ns-big-agi
-   kubectl apply -f docs/k8s/big-agi-deployment.yaml -f env-secret.yaml
+   kubectl apply -f docs/k8s/big-agi-deployment.yaml -f .env-secret.yaml
    ```
 
 4. Verify the deployment:

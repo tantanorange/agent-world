@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/.env node
 /**
  * Parse Ollama models from HTML (sorted by newest for stable ordering)
  *

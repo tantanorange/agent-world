@@ -10,7 +10,7 @@ export function aixResilientUnknownValue(
   fieldName: string,
   value: unknown,
 ): false {
-  const DO_THROW = env.AIX_STRICT_PARSING === 'true' || process.env.NODE_ENV === 'development'; // not using 'env' because in client-side code values are empty (mocked) - NOTE: test if this is true
+  const DO_THROW = env.AIX_STRICT_PARSING === 'true' || process.env.NODE_ENV === 'development'; // not using '.env' because in client-side code values are empty (mocked) - NOTE: test if this is true
 
   if (DO_THROW) {
     const safeValue = objectDeepCloneWithStringLimit(value, context, 1024);

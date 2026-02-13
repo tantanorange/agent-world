@@ -62,7 +62,7 @@ jobs:
       - name: Log in to the Container registry
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ .env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -70,7 +70,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@c299e40c65443455700f0fdfc63efafe5b349051 # v5.10.0
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ .env.REGISTRY }}/${{ .env.IMAGE_NAME }}
           labels: |
             org.opencontainers.image.title=Big-AGI Open
             org.opencontainers.image.description=Big-AGI Open - Multi-model AI workspace for experts who need to think broader, decide smarter, and build with confidence.
@@ -85,7 +85,7 @@ jobs:
           file: Dockerfile
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LC }}
+          tags: ${{ .env.REGISTRY }}/${{ .env.IMAGE_NAME_LC }}
           build-args: |
             NEXT_PUBLIC_GA4_MEASUREMENT_ID=${{ secrets.GA4_MEASUREMENT_ID }}
             NEXT_PUBLIC_BUILD_HASH=${{ github.sha }}
@@ -104,7 +104,7 @@ jobs:
       - name: Upload digest
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
-          name: digests-${{ env.PLATFORM_PAIR }}
+          name: digests-${{ .env.PLATFORM_PAIR }}
           path: ${{ runner.temp }}/digests/*
           if-no-files-found: error
           retention-days: 1
@@ -137,7 +137,7 @@ jobs:
       - name: Log in to the Container registry
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3.7.0
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ${{ .env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -145,7 +145,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@c299e40c65443455700f0fdfc63efafe5b349051 # v5.10.0
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ .env.REGISTRY }}/${{ .env.IMAGE_NAME }}
           tags: |
             # Development: main branch
             type=raw,value=development,enable=${{ github.ref == 'refs/heads/main' }}

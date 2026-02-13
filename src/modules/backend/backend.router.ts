@@ -21,7 +21,7 @@ function sdbmHash(str: string): string {
 }
 
 function generateLlmEnvConfigHash(env: Record<string, unknown>): string {
-  const envAPIKeys = Object.keys(env)     // get all env keys
+  const envAPIKeys = Object.keys(env)     // get all .env keys
     .filter(key => !!env[key])            // minus the empty
     .filter(key => key.includes('_API_')) // minus the non-API keys
     .map(key => `${key}=${env[key]}`)     // create key-value pairs
@@ -29,7 +29,7 @@ function generateLlmEnvConfigHash(env: Record<string, unknown>): string {
   const hashInputs = [
     Release.Monotonics.Aix.toString(),  // triggers at every change (large downstream effect, know what you are doing)
     Release.TenantSlug.toString(),          // triggers when branch changes
-    ...envAPIKeys,                      // triggers when env keys change
+    ...envAPIKeys,                      // triggers when .env keys change
   ];
   return sdbmHash(hashInputs.join(';'));
 }

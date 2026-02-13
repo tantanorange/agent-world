@@ -67,7 +67,7 @@ let nextConfig: NextConfig = {
        */
       const serverToClientMocks: ReadonlyArray<[RegExp, string]> = [
         [/\/posthog\.server/, '/posthog.client-mock'],
-        [/\/env\.server/, '/env.client-mock'],
+        [/\/env\.server/, '/.env.client-mock'],
       ];
       config.plugins = [
         ...config.plugins,
@@ -129,9 +129,9 @@ let nextConfig: NextConfig = {
   // },
 };
 
-// Validate environment variables at build time, if required. Server env vars will be actually read and used at runtime (cloud/edge).
+// Validate environment variables at build time, if required. Server .env vars will be actually read and used at runtime (cloud/edge).
 import { env as validateEnv } from '~/server/env.server';
-void validateEnv; // Triggers env validation - throws if required vars are missing
+void validateEnv; // Triggers .env validation - throws if required vars are missing
 
 // PostHog error reporting with source maps for production builds
 import { withPostHogConfig } from '@posthog/nextjs-config';

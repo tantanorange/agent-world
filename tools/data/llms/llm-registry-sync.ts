@@ -1,4 +1,4 @@
-#!/usr/bin/env tsx
+#!/usr/bin/.env tsx
 /**
  * LLM Registry Sync
  *

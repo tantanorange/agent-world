@@ -448,7 +448,7 @@ function _azureOpenAIAccess(access: OpenAIAccessSchema, modelRefId: string | nul
   // Server-side configuration, with defaults
   const server = _azureServerSideVars();
 
-  // Client-provided values always take precedence over server env vars
+  // Client-provided values always take precedence over server .env vars
   const azureKey = access.oaiKey || server.apiKey || '';
   const azureHostFixed = llmsFixupHost(access.oaiHost || server.apiEndpoint || '', apiPath);
 

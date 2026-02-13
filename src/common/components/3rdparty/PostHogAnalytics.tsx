@@ -92,7 +92,7 @@ export function OptionalPostHogAnalytics() {
 
         // initialize
         _posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || '', {
-          api_host: '/a/ph', // client analytics host - default: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
+          api_host: '/a/ph', // client analytics host - default: process..env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
           ui_host: 'https://us.posthog.com',
           defaults: '2025-05-24',
           capture_exceptions: true, // captures exceptions using Error Tracking

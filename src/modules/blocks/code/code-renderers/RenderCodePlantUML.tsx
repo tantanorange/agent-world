@@ -49,7 +49,7 @@ export function getPlantUmlServerUrl(): string {
 }
 
 async function _fetchPlantUmlSvg(plantUmlCode: string): Promise<string | null> {
-  // Get the PlantUML server from inline env var
+  // Get the PlantUML server from inline .env var
   let plantUmlServerUrl = getPlantUmlServerUrl();
   if (!plantUmlServerUrl.endsWith('/'))
     plantUmlServerUrl += '/';
