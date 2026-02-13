@@ -67,7 +67,7 @@ let nextConfig: NextConfig = {
        */
       const serverToClientMocks: ReadonlyArray<[RegExp, string]> = [
         [/\/posthog\.server/, '/posthog.client-mock'],
-        [/\/env\.server/, '/.env.client-mock'],
+        [/\/env\.server/, '/env.client-mock'],
       ];
       config.plugins = [
         ...config.plugins,
