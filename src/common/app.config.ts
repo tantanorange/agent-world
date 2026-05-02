@@ -8,12 +8,13 @@
  */
 export const Brand = {
   Title: {
-    Base: 'Big-AGI',
-    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'Big-AGI',
+    Base: "agentK's-Playground😈",
+    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + "agentK's-Playground😈",
   },
   Meta: {
-    Description: 'Launch the open-source AI workspace for experts. BYO API keys. Compare and tune models, use personas, voice and vision - your data stays local.',
-    SiteName: 'Big-AGI | The Expert\'s AI Workspace',
+    Description:
+      'Launch big-AGI to unlock the full potential of AI, with precise control over your data and models. Voice interface, AI personas, advanced features, and fun UX.',
+    SiteName: "agentK's-Playground😈 | Profound Agent for K",
     ThemeColor: '#32383E',
     TwitterSite: '@enricoros',
   },
@@ -24,11 +25,11 @@ export const Brand = {
     OpenRepo: 'https://github.com/enricoros/big-agi',
     OpenProject: 'https://github.com/users/enricoros/projects/4',
     SupportInvite: 'https://discord.gg/MkH4qj2Jp9',
-    // Twitter: 'https://x.com/enricoros',
+    // Twitter: 'https://www.twitter.com/enricoros',
     PrivacyPolicy: 'https://big-agi.com/privacy',
     TermsOfService: 'https://big-agi.com/terms',
   },
   Docs: {
     Public: (docPage: string) => `https://big-agi.com/docs/${docPage}`,
-  }
+  },
 } as const;
