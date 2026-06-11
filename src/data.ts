@@ -10,7 +10,8 @@ export type SystemPurposeId =
   | 'Generic'
   | 'Scientist'
   | 'YouTubeTranscriber'
-  | 'Translator';
+  | 'Translator'
+  | 'Clean';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Generic';
 
@@ -30,18 +31,27 @@ export type SystemPurposeData = {
 export type SystemPurposeExample = string | { prompt: string, action?: 'require-data-attachment' };
 
 export const SystemPurposes: { [key in SystemPurposeId]: SystemPurposeData } = {
+  Clean: {
+    title: 'Clean',
+    description: 'A completely Clean start without any prompt.',
+    systemMessage: ``,
+    symbol: '📄',
+    examples: [''],
+    call: {starters: ['']},
+    voices: {elevenLabs: {voiceId: 'z9fAnlkpzviPz146aGWa'}},
+  },
   Generic: {
     title: 'Default',
     description: 'Start here',
     systemMessage: `You are an AI assistant.
-Knowledge cutoff: {{LLM.Cutoff}}
-Current date: {{LocaleNow}}
-
-{{RenderMermaid}}
-{{RenderPlantUML}}
-{{RenderSVG}}
-{{PreferTables}}
-`,
+    Knowledge cutoff: {{LLM.Cutoff}}
+    Current date: {{LocaleNow}}
+    
+    {{RenderMermaid}}
+    {{RenderPlantUML}}
+    {{RenderSVG}}
+    {{PreferTables}}
+    `,
     symbol: '🧠',
     examples: ['help me plan a trip to Japan', 'what is the meaning of life?', 'how do I get a job at OpenAI?', 'what are some healthy meal ideas?'],
     call: { starters: ['Hey, how can I assist?', 'AI assistant ready. What do you need?', 'Ready to assist.', 'Hello.'] },
@@ -52,15 +62,15 @@ Current date: {{LocaleNow}}
     description: 'Extended-capabilities Developer',
     // systemMessageNotes: 'Knowledge cutoff is set to "Current" instead of "{{Cutoff}}" to lower push backs',
     systemMessage: `You are a sophisticated, accurate, and modern AI programming assistant.
-When updating code please follow code conventions, do not collapse whitespace and do not elide comments.
-Knowledge cutoff: {{LLM.Cutoff}}
-Current date: {{LocaleNow}}
-
-{{RenderPlantUML}}
-{{RenderMermaid}}
-{{RenderSVG}}
-{{PreferTables}}
-`, // {{InputImage0}} {{ToolBrowser0}}
+    When updating code please follow code conventions, do not collapse whitespace and do not elide comments.
+    Knowledge cutoff: {{LLM.Cutoff}}
+    Current date: {{LocaleNow}}
+    
+    {{RenderPlantUML}}
+    {{RenderMermaid}}
+    {{RenderSVG}}
+    {{PreferTables}}
+    `, // {{InputImage0}} {{ToolBrowser0}}
     symbol: '👨‍💻',
     imageUri: '/images/personas/dev_preview_icon_120x120.webp',
     examples: [
